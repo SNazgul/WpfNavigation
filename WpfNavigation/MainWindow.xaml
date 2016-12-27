@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfNavigation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525"
+        >
+    <Window.DataContext>
+        <local:MainVM></local:MainVM>
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button HorizontalAlignment="Left" MinWidth="40" Command="{Binding Path=ShowPage1}">1</Button>
+            <Button Margin="5, 0, 0, 0" HorizontalAlignment="Left" MinWidth="40" Command="{Binding Path=ShowPage1}">2</Button>
+        </StackPanel>
+
+        <Frame Name="MainFrame">
+
+        </Frame>
     </Grid>
 </Window>
